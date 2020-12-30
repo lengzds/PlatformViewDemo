@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="left"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:text="platform can show in flutter activity"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/open_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="open normal flutter activity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:text="platform can not show in flutter fragment"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/open_fragment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="open flutter fragment with FragmentManager" />
+
+    <Button
+        android:id="@+id/open_fragment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="open flutter fragment with PagerAdapter" />
+
+</LinearLayout>

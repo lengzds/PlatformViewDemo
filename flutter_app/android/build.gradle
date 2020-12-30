@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        maven { url 'http://maven.aliyun.com/repository/google' }
+        maven { url 'http://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+allprojects {
+    repositories {
+//        maven { url 'http://maven.aliyun.com/repository/google' }
+//        maven { url 'http://maven.aliyun.com/repository/jcenter' }
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+//        maven { url 'http://maven.applib.baidu-int.com:8681/repository/applib-public/' }
+//        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/central/' }
+//        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/jcenter/' }
+//        // 临时
+//        maven { url 'http://maven.mbd.baidu.com:8666/repository/component-release/' }
+        google()
+        jcenter()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
