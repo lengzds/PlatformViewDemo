@@ -1,5 +1,6 @@
 package com.baidu.flutter.flutter_app;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -11,18 +12,25 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import io.flutter.embedding.android.DrawableSplashScreen;
+import io.flutter.embedding.android.FlutterEngineConfigurator;
+import io.flutter.embedding.android.FlutterEngineProvider;
 import io.flutter.embedding.android.FlutterFragment;
 import io.flutter.embedding.android.SplashScreen;
 import io.flutter.embedding.android.SplashScreenProvider;
+import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister;
 import io.flutter.plugin.platform.PlatformPlugin;
 
-public class FlutterFragmentPageActivity1 extends AppCompatActivity implements View.OnClickListener, SplashScreenProvider {
-    protected static final String SPLASH_SCREEN_META_DATA_KEY = "io.flutter.embedding.android.SplashScreenDrawable";
+public class FlutterFragmentActivity1 extends AppCompatActivity implements
+        View.OnClickListener, SplashScreenProvider, FlutterEngineConfigurator {
+    protected static final String SPLASH_SCREEN_META_DATA_KEY =
+            "io.flutter.embedding.android.SplashScreenDrawable";
 
     private FlutterFragment mFragment;
 
@@ -125,5 +133,15 @@ public class FlutterFragmentPageActivity1 extends AppCompatActivity implements V
             // This is never expected to happen.
             return null;
         }
+    }
+
+    @Override
+    public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+        GeneratedPluginRegister.registerGeneratedPlugins(flutterEngine);
+    }
+
+    @Override
+    public void cleanUpFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+
     }
 }

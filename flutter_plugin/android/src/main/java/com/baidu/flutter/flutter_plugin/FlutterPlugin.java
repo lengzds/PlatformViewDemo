@@ -25,6 +25,7 @@ public class FlutterPlugin implements io.flutter.embedding.engine.plugins.Flutte
         channel = new MethodChannel(messenger, "flutter_plugin");
         channel.setMethodCallHandler(this);
 
+        android.util.Log.e("zds","FlutterPlugin onAttachedToEngine");
         flutterPluginBinding.getPlatformViewRegistry().registerViewFactory("platform_text_view",
                 new SharePlatformViewFactory());
     }
@@ -41,6 +42,9 @@ public class FlutterPlugin implements io.flutter.embedding.engine.plugins.Flutte
     public static void registerWith(Registrar registrar) {
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_plugin");
         channel.setMethodCallHandler(new FlutterPlugin());
+
+        registrar.platformViewRegistry().registerViewFactory("platform_text_view",
+                new SharePlatformViewFactory());
     }
 
     @Override
@@ -54,6 +58,7 @@ public class FlutterPlugin implements io.flutter.embedding.engine.plugins.Flutte
 
     @Override
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+        android.util.Log.e("zds","FlutterPlugin onDetachedFromEngine");
         channel.setMethodCallHandler(null);
     }
 }

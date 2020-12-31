@@ -2,12 +2,17 @@ package com.baidu.flutter.flutter_app;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class FlutterFragmentPageActivity2 extends FragmentActivity {
+import io.flutter.embedding.android.FlutterEngineConfigurator;
+import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister;
+
+public class FlutterFragmentActivity2 extends FragmentActivity implements FlutterEngineConfigurator {
     DemoCollectionPagerAdapter demoCollectionPagerAdapter;
     ViewPager viewPager;
 
@@ -23,5 +28,15 @@ public class FlutterFragmentPageActivity2 extends FragmentActivity {
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+        GeneratedPluginRegister.registerGeneratedPlugins(flutterEngine);
+    }
+
+    @Override
+    public void cleanUpFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+
     }
 }

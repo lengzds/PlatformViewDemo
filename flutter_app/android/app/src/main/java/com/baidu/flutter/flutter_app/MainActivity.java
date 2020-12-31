@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MyFlutterFragmentActivity.class));
+                startActivity(new Intent(MainActivity.this, MyFlutterActivity.class));
             }
         });
 
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FlutterFragmentPageActivity1.class));
+                startActivity(new Intent(MainActivity.this, FlutterFragmentActivity1.class));
             }
         });
 
@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FlutterFragmentPageActivity2.class));
+                startActivity(new Intent(MainActivity.this, FlutterFragmentActivity2.class));
             }
         });
 
